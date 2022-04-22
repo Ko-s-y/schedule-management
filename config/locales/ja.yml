@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      task: スケジュール
+    attributes:
+      task:
+        title: タイトル
+        start_date: 開始日
+        finish_date: 終了日
+        allday?: 終日
+        description: 詳細
+  date:
+    formats:
+      default: "%Y年 %m月 %d日"
