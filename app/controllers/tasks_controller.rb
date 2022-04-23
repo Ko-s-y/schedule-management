@@ -19,7 +19,7 @@ class TasksController < ApplicationController
       render "new"
     end
   end
-  
+
   def show
     @task = Task.find(params[:id])
   end
@@ -51,11 +51,11 @@ class TasksController < ApplicationController
   end
 
   def first_task
-    d1 = Date.today
-    d2 = Task.minimum(:start_date)
+    date_today = Date.today
+    latest_date = Task.minimum(:start_date)
     begin
-      diff = d2 - d1
-      @after_day = "%d" % diff.to_i
+      diff_day = latest_date - date_today
+      @after_day = "%d" % diff_day.to_i
     rescue => exception
       @after_day = nil
     end

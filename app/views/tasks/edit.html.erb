@@ -21,11 +21,11 @@
       <td><%= f.check_box :allday, {}, "true", "false" %><div class="attend">終日の場合はチェックを入れてください</div></td>
     </tr>
     <tr>
-      <th><%= f.label :description ,"詳細" %></th>
+      <th><%= f.label :description ,"詳細" %><div class="attend">208字以内</div></th>
       <td><%= f.text_area :description %></td>
     </tr>
   </table>
-  
+
   <div class="guide">
     <div><%= f.submit "スケジュールの編集を完了する", class: "submit-btn" %></div>
     <div><%= link_to "スケジュール一覧に戻る", :tasks, class: "btn" %></div>

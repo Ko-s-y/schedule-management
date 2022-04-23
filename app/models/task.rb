@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   validates :title, :start_date, :finish_date, presence: true
+  validates :description, length: {maximum: 208}
   validate :check_start
   validate :check_date
 
