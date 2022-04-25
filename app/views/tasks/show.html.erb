@@ -1,0 +1,38 @@
+<h3>スケジュール詳細</h3>
+ 
+<table class="form-table">
+  <tr>
+    <th>ID</th>
+    <td><%= @task.id %></td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @task.title %></td>
+  </tr>
+  <tr>
+    <th>開始日</th>
+    <td><%= @task.start_date.to_s(:datetime_jp) %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @task.finish_date.to_s(:datetime_jp) %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+    <% if @task.allday == true %>
+      <td>○</td>
+    <% else %>
+      <td></td>
+    <% end %>
+  </tr>
+  <tr>
+    <th>詳細</th>
+    <td><%= @task.description %></td>
+  </tr>
+</table>
+
+<div class="guide">
+    <div><%= link_to "スケジュール一覧に戻る", :tasks, class: "btn" %></div>
+    <div><%= link_to "スケジュールを編集する", [:edit, @task], class: "btn" %></div>
+    <div><%= link_to "スケジュールを削除する", @task, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn" %></div>
+</div>
